@@ -3,8 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #202225;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
 }
 
 .text-color {
@@ -40,6 +46,10 @@ body {
 
 .mr-3 {
   margin-right: 24px;
+}
+
+.mb-3 {
+  margin-bottom: 24px;
 }
 
 .mb-5 {
@@ -97,6 +107,10 @@ input {
   border-color: .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+.infos {
+  display: none;
+}
+
 .span {
   color: #DC3545;
 }
@@ -105,7 +119,7 @@ input {
   #inputArea {
     flex-direction: column;
     width: 70vw;
-    border: 1px solid #FF0;
+    /* border: 1px solid #FF0; */
   }
 
   input {

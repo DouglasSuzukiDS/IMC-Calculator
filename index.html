@@ -8,8 +8,8 @@
     <title>IMC</title>
 </head>
 <body>
-    <div class="flex-center column border p-5">
-
+    <div class=" container flex-center column p-5" >
+        <h1 class="flex-center text-color mb-3">Calcule seu IMC </h1>
         <div id="inputArea" class="flex-center mb-5">
             <input type='text' class="input text-color" placeholder='Altura' id="altura"/>
         
@@ -20,9 +20,16 @@
             </button>
         </div>
 
-        <div id="area" class="border">
-            <p class="text-color bold imc-font">Seu IMC é: <span class="span"></span></p>
+        <div class="infos flex-center border">
+            <div id="area" class="mb-5 flex-center">
+                <p class="text-color bold imc-font">Seu IMC é: <span class="span"></span></p>
+            </div>
+    
+            <div class="result flex-center">
+                <p class="res-text text-color bold imc-font"></p>
+            </div>
         </div>
+
     </div>
 
     <script src="script.js"></script>
