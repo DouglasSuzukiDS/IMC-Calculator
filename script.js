@@ -3,19 +3,57 @@ function calcIMC() {
     let peso = document.querySelector('#peso').value
     let altura = document.querySelector('#altura').value
     
-    let altura2 = altura * 2
-    console.log(`Altura: ${altura}`)
-    console.log(`Altura 2: ${altura2}`)
-    console.log(`Peso: ${peso}`)
+    // console.log(`Tipo da Altura: ${typeof altura}`)
+    // console.log(`Tipo do Peso: ${typeof peso}`)
 
-    let imc = (peso / altura2).toFixed(2)
-    console.log(`IMC: ${imc}`)
+    let alt1 = altura.indexOf('.')
+    let alt2 = altura.indexOf(',')
+    let pes1 = altura.indexOf('.')
+    let pes2 = altura.indexOf(',')
 
-    showInfos(imc)
+    if(alt1 === -1 && alt2 === -1) { // -1 Não Achado, 1 Achado
+        // Convert = altura(Ex: 1.80)
+        let comPonto = altura.replace(altura[0], altura[0] + '.')
+        //console.log(`Replace loco: ${convert}`)
+
+        let altura2 = comPonto * 2
+        console.log(`Altura agora com Ponto: ${comPonto}`)
+        console.log(`Altura² agora com Ponto: ${altura2}`)
+        console.log(`Peso: ${peso}`)
+
+        let imc = (peso / altura2).toFixed(2)
+        console.log(`IMC com valor convertido: ${imc}`)
+    
+        showInfos(imc)
+
+    } else if(alt2 === 1){
+        console.log('Entrou no IF 2')
+        let comPonto = altura.replace(',', '.')
+        console.log(`Com virgula: ${comPonto}`)
+
+        let altura2 = comPonto * 2
+        console.log(`Altura Convertida: ${comPonto}`)
+        console.log(`Altura² Convertida: ${altura2}`)
+        console.log(`Peso: ${peso}`)
+
+        let imc = (peso / altura2).toFixed(2)
+        console.log(`IMC com valor convertido: ${imc}`)
+    
+        showInfos(imc)
+    } else {
+        let altura2 = altura * 2
+        console.log(`Altura: ${altura}`)
+        console.log(`Altura 2: ${altura2}`)
+        console.log(`Peso: ${peso}`)
+
+        let imc = (peso / altura2).toFixed(2)
+        console.log(`IMC: ${imc}`)
+
+        showInfos(imc)
+    }
 }
 
 function showInfos(imc) {
-    // let area = document.querySelector('#area')
     let infos = document.querySelector('.infos')
     let span = document.querySelector('.span')
     let resText = document.querySelector('.res-text')
