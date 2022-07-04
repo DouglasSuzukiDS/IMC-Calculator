@@ -1,15 +1,25 @@
+
 function calcIMC() {
-    // IMC = peso / altura²
     let peso = document.querySelector('#peso').value
     let altura = document.querySelector('#altura').value
+    // IMC = peso / altura²
     
     // console.log(`Tipo da Altura: ${typeof altura}`)
     // console.log(`Tipo do Peso: ${typeof peso}`)
-
     let alt1 = altura.indexOf('.')
     let alt2 = altura.indexOf(',')
     let pes1 = altura.indexOf('.')
     let pes2 = altura.indexOf(',')
+
+    /*let altura2 = altura * 2
+    console.log(`Altura: ${altura}`)
+    console.log(`Altura 2: ${altura2}`)
+    console.log(`Peso: ${peso}`)
+
+    let imc = (peso / altura2).toFixed(2)
+    console.log(`IMC: ${imc}`)
+
+    showInfos(imc)*/
 
     if(alt1 === -1 && alt2 === -1) { // -1 Não Achado, 1 Achado
         // Convert = altura(Ex: 1.80)
